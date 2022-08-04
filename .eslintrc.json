@@ -9,7 +9,7 @@
     "react-app/jest",
     "airbnb",
     "plugin:import/typescript",
-    "plugin:prettier/recommend"
+    "plugin:prettier/recommended"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -24,6 +24,10 @@
   "rules": {
     "quotes": ["error", "double", { "avoidEscape": true }],
     "@typescript-eslint/quotes": ["error", "double", { "avoidEscape": true }],
+    "react/jsx-filename-extension": [
+      2,
+      { "extensions": [".js", ".jsx", ".ts", ".tsx"] }
+    ],
     "react/jsx-uses-react": ["off"],
     "react/react-in-jsx-scope": ["off"],
     "react/jsx-props-no-spreading": ["warn"],
