@@ -1,11 +1,7 @@
 import React from "react";
 
 function App() {
-  return (
-    <React.StrictMode>
-      <div />
-    </React.StrictMode>
-  );
+  return <div>Hello World</div>;
 }
 
 export default App;
