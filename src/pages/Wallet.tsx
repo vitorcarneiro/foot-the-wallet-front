@@ -1,4 +1,10 @@
 import styled from "styled-components";
+import { BsGridFill } from "react-icons/bs";
+// BsGrid
+import { IoWallet } from "react-icons/io5";
+// IoWalletOutline
+import { RiLightbulbFill, RiSettings3Fill } from "react-icons/ri";
+// RiLightbulbLine RiSettings3Line
 
 const Container = styled.div`
   width: 100vw;
@@ -9,16 +15,29 @@ const Container = styled.div`
 `;
 
 const NavBar = styled.nav`
-  width: 20%;
+  width: 150px;
   height: 100%;
 
   border: 2px solid red;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  * {
+    color: white;
+  }
 `;
 
 function Wallet() {
   return (
     <Container>
-      <NavBar />
+      <NavBar>
+        <BsGridFill size={50} />
+        <IoWallet size={50} />
+        <RiLightbulbFill size={50} />
+        <RiSettings3Fill size={50} />
+      </NavBar>
       <div>Hello, Vitor!</div>
     </Container>
   );
