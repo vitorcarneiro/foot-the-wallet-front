@@ -1,5 +1,13 @@
 import PropTypes from "prop-types";
-import { BsGridFill, BsGrid, BsQuestionCircle } from "react-icons/bs";
+import {
+  BsGridFill,
+  BsGrid,
+  BsQuestionCircle,
+  BsFillFileBarGraphFill,
+  BsFileBarGraph,
+  BsPeopleFill,
+  BsPeople,
+} from "react-icons/bs";
 import { IoWallet, IoWalletOutline } from "react-icons/io5";
 import {
   RiLightbulbFill,
@@ -44,12 +52,30 @@ function NavButton({ isActive, type }: { isActive: boolean; type: string }) {
       );
       break;
 
-    case "setting":
+    case "settings":
       menu.name = "Settings";
       menu.reactIcon = isActive ? (
         <RiSettings3Fill size={iconSize} />
       ) : (
         <RiSettings3Line size={iconSize} />
+      );
+      break;
+
+    case "graphs":
+      menu.name = "Graph charts";
+      menu.reactIcon = isActive ? (
+        <BsFillFileBarGraphFill size={iconSize} />
+      ) : (
+        <BsFileBarGraph size={iconSize} />
+      );
+      break;
+
+    case "friends":
+      menu.name = "Graph charts";
+      menu.reactIcon = isActive ? (
+        <BsPeopleFill size={iconSize} />
+      ) : (
+        <BsPeople size={iconSize} />
       );
       break;
 
