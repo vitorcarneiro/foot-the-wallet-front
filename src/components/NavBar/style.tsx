@@ -12,7 +12,7 @@ export const Nav = styled.nav`
     list-style-type: none;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 22px;
   }
 
   img {
@@ -21,4 +21,4 @@ export const Nav = styled.nav`
   }
 `;
 
-export const NavButton = styled.button``;
+export const Button = styled.button``;
