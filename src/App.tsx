@@ -1,19 +1,23 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Dashboard from "./pages/Dashboard";
-import Home from "./pages/Home";
+import React from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Layout from './components/PageLayout';
 
-function App() {
+export function App() {
+  return (
+    <Routes>
+      <Route element={<Layout />}>
+        <Route path="/" element={<div>Hello World</div>} />
+        <Route path="*" element={<div>Test</div>} />
+        <Route path="/test" element={<div>Test in progress</div>} />
+      </Route>
+    </Routes>
+  );
+}
+
+export function WrappedApp() {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/dashboard" element={<Dashboard />}>
-          <Route path="/home" element={<Home />} />
-          <Route path="/wallet" element={<Home />} />
-          <Route path="/graphs" element={<Home />} />
-          <Route path="/wallet" element={<Home />} />
-        </Route>
-      </Routes>
+      <App />
     </BrowserRouter>
   );
 }
-export default App;
