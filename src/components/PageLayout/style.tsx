@@ -6,7 +6,11 @@ export const PageContainer = styled.div`
   display: flex;
   padding: 15px 10px;
 
-  background-color: #272727;
+  background: linear-gradient(
+    90deg,
+    ${({ theme }) => theme.colors.background1} 33%,
+    ${({ theme }) => theme.colors.background2} 100%
+  );
 `;
 
 export const ContentContainer = styled.main`
@@ -14,12 +18,13 @@ export const ContentContainer = styled.main`
   height: 100%;
   position: relative;
 
-  background-color: #131212;
+  background-color: ${({ theme }) => theme.colors.container};
   border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: #fff;
+  color: ${({ theme }) => theme.colors.text};
 `;

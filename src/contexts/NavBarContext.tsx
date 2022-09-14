@@ -3,14 +3,14 @@ import React, { createContext, useMemo, useState } from 'react';
 interface INavBarContextProps {
   showNavBar: boolean;
   setShowNavBar: (newState: boolean) => void;
-  selectedNav: number;
-  setSelectedNav: (newState: number) => void;
+  selectedNav: string;
+  setSelectedNav: (newState: string) => void;
 }
 
 const initalValue = {
-  showNavBar: false,
+  showNavBar: true,
   setShowNavBar: () => {},
-  selectedNav: 0,
+  selectedNav: window.location.pathname,
   setSelectedNav: () => {},
 };
 

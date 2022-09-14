@@ -28,5 +28,8 @@
     {
       "path": "./tsconfig.node.json"
     }
+  ],
+  "files": [
+    "src/themes/styled.d.ts"
   ]
 }

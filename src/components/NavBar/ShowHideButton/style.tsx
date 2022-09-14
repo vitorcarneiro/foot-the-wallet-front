@@ -8,7 +8,7 @@ const ShowHideButton = styled.button`
   position: absolute;
   top: 52%;
   left: -10px;
-  background-color: #131212;
+  background-color: ${({ theme }) => theme.colors.container};
 
   font-weight: 700;
   font-size: 10px;

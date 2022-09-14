@@ -1,42 +1,37 @@
 import React, { useContext } from 'react';
-import { BsGrid, BsPeople } from 'react-icons/bs';
-import {
-  IoWalletOutline,
-  IoBarChartOutline,
-  IoSettingsOutline,
-} from 'react-icons/io5';
-import { TbDoorExit } from 'react-icons/tb';
 
-import NavBarContext from '../../context/NavBarContext';
+import NavBarContext from '../../contexts/NavBarContext';
 import { Nav } from './style';
 
-import logo from '../../assets/logo-white-bg.png';
+import logoForDarkTheme from '../../assets/logo-white-bg.png';
+import logoForLightTheme from '../../assets/logo-blue-bg.png';
+import Home from './Buttons/Home';
+import Wallet from './Buttons/Wallet';
+import Charts from './Buttons/Charts';
+import People from './Buttons/People';
+import Settings from './Buttons/Settings';
+import Exit from './Buttons/Exit';
+import ThemeSwitch from './Buttons/ThemeSwitch';
+import SelectedThemeContext from '../../contexts/SelectedThemeContext';
 
 function NavBar() {
   const { showNavBar } = useContext(NavBarContext);
+  const { isDarkMode, setIsDarkMode } = useContext(SelectedThemeContext);
 
   return (
     <Nav isOpen={showNavBar}>
-      <img src={logo} alt="foot the wallet logo" />
+      <img
+        src={isDarkMode ? logoForDarkTheme : logoForLightTheme}
+        alt="foot the wallet logo"
+      />
       <ul>
-        <li>
-          <BsGrid size={20} color="#5a5a5a" />
-        </li>
-        <li>
-          <IoWalletOutline size={20} color="#5a5a5a" />
-        </li>
-        <li>
-          <IoBarChartOutline size={20} color="#5a5a5a" />
-        </li>
-        <li>
-          <BsPeople size={20} color="#5a5a5a" />
-        </li>
-        <li>
-          <IoSettingsOutline size={20} color="#5a5a5a" />
-        </li>
-        <li>
-          <TbDoorExit size={20} color="#5a5a5a" />
-        </li>
+        <Home />
+        <Wallet />
+        <Charts />
+        <People />
+        <Settings />
+        <Exit />
+        <ThemeSwitch />
       </ul>
     </Nav>
   );
