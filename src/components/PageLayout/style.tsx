@@ -4,7 +4,7 @@ export const PageContainer = styled.div`
   width: 100vw;
   height: 100vh;
   display: flex;
-  padding: 20px 20px 20px 0;
+  padding: 15px 10px;
 
   background-color: #272727;
 `;

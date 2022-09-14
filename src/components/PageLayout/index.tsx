@@ -1,13 +1,16 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
-import GlobalStyle from '../GlobalStyle';
+
+import { NavBarProvider } from '../../context/NavBarContext';
 import NavBar from '../NavBar';
 import ShowHideNavBarButton from '../NavBar/ShowHideButton';
+
+import GlobalStyle from '../GlobalStyle';
 import { ContentContainer, PageContainer } from './style';
 
 function Layout() {
   return (
-    <>
+    <NavBarProvider>
       <GlobalStyle />
       <PageContainer>
         <NavBar />
@@ -16,7 +19,7 @@ function Layout() {
           <ShowHideNavBarButton />
         </ContentContainer>
       </PageContainer>
-    </>
+    </NavBarProvider>
   );
 }
 

@@ -1,21 +1,22 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { BsGrid, BsPeople } from 'react-icons/bs';
-
 import {
   IoWalletOutline,
   IoBarChartOutline,
   IoSettingsOutline,
 } from 'react-icons/io5';
-
 import { TbDoorExit } from 'react-icons/tb';
 
+import NavBarContext from '../../context/NavBarContext';
 import { Nav } from './style';
 
 import logo from '../../assets/logo-white-bg.png';
 
 function NavBar() {
+  const { showNavBar } = useContext(NavBarContext);
+
   return (
-    <Nav>
+    <Nav isOpen={showNavBar}>
       <img src={logo} alt="foot the wallet logo" />
       <ul>
         <li>
