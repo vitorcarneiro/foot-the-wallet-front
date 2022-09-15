@@ -33,14 +33,13 @@ export const NavButton = styled.button<{ isSelected: boolean }>`
   }
 `;
 
-export const SwitchContainer = styled.li<{ isDarkMode: boolean }>`
+export const SwitchContainer = styled.li`
   position: absolute;
   bottom: 30px;
   transform: rotate(90deg);
 
   svg {
     transform: rotate(-90deg);
-    color: ${({ isDarkMode, theme }) =>
-      isDarkMode ? theme.colors.background2 : theme.colors.background1};
+    color: ${({ theme }) => theme.colors.background1};
   }
 `;

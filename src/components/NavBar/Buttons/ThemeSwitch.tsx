@@ -14,7 +14,7 @@ function ThemeSwitch() {
 
   // console.log(isDarkMode);
   return (
-    <SwitchContainer isDarkMode={isDarkMode}>
+    <SwitchContainer>
       <Switch
         checked={isDarkMode}
         onChange={() => setIsDarkMode(!isDarkMode)}
