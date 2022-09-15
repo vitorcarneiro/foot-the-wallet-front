@@ -1,4 +1,4 @@
-import React, { createContext, useMemo, useState } from 'react';
+import React, { createContext, useEffect, useMemo, useState } from 'react';
 
 interface IthemeContextProps {
   isDarkMode: boolean;
@@ -7,7 +7,7 @@ interface IthemeContextProps {
 
 const initalValue = {
   isDarkMode: true,
-  setIsDarkMode: () => {},
+  setIsDarkMode: () => { },
 };
 
 interface IThemeProviderProps {
@@ -21,6 +21,18 @@ export function SelectedThemeProvider({
   children,
 }: IThemeProviderProps): React.ReactElement {
   const [isDarkMode, setIsDarkMode] = useState(initalValue.isDarkMode);
+
+  useEffect(
+    () =>
+      setIsDarkMode(
+        JSON.parse(window.localStorage.getItem('isDarkMode') || '')
+      ),
+    []
+  );
+
+  useEffect(() => {
+    window.localStorage.setItem('isDarkMode', JSON.stringify(isDarkMode));
+  }, [isDarkMode]);
 
   const selectedThemeContext = useMemo(
     () => ({
