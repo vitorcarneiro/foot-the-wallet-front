@@ -12,7 +12,6 @@ function ThemeSwitch() {
   const { isDarkMode, setIsDarkMode } = useContext(SelectedThemeContext);
   const { colors } = useContext(ThemeContext);
 
-  // console.log(isDarkMode);
   return (
     <SwitchContainer>
       <Switch

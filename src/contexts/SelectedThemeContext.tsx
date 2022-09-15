@@ -1,4 +1,5 @@
-import React, { createContext, useEffect, useMemo, useState } from 'react';
+import React, { createContext, useMemo } from 'react';
+import usePersistedState from '../utils/usePersistedState';
 
 interface IthemeContextProps {
   isDarkMode: boolean;
@@ -7,7 +8,7 @@ interface IthemeContextProps {
 
 const initalValue = {
   isDarkMode: true,
-  setIsDarkMode: () => { },
+  setIsDarkMode: () => {},
 };
 
 interface IThemeProviderProps {
@@ -20,26 +21,17 @@ export default SelectedThemeContext;
 export function SelectedThemeProvider({
   children,
 }: IThemeProviderProps): React.ReactElement {
-  const [isDarkMode, setIsDarkMode] = useState(initalValue.isDarkMode);
-
-  useEffect(
-    () =>
-      setIsDarkMode(
-        JSON.parse(window.localStorage.getItem('isDarkMode') || '')
-      ),
-    []
+  const [isDarkMode, setIsDarkMode] = usePersistedState<boolean>(
+    'isDarkMode',
+    initalValue.isDarkMode
   );
-
-  useEffect(() => {
-    window.localStorage.setItem('isDarkMode', JSON.stringify(isDarkMode));
-  }, [isDarkMode]);
 
   const selectedThemeContext = useMemo(
     () => ({
       isDarkMode,
       setIsDarkMode,
     }),
-    [isDarkMode]
+    [isDarkMode, setIsDarkMode]
   );
 
   return (

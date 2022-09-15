@@ -14,8 +14,8 @@ export function App() {
         }
       >
         <Route path="/" element={<div>Hello World</div>} />
-        <Route path="*" element={<div>Test</div>} />
         <Route path="/test" element={<div>Test in progress</div>} />
+        <Route path="*" element={<div>Test</div>} />
       </Route>
     </Routes>
   );
