@@ -8,12 +8,12 @@ function Home() {
   const { selectedNav, setSelectedNav } = useContext(NavBarContext);
   return (
     <li>
-      <NavButton isSelected={selectedNav === '/'}>
-        <Link to="/">
-          {selectedNav === '/' ? (
+      <NavButton isSelected={selectedNav === '/home'}>
+        <Link to="/home">
+          {selectedNav === '/home' ? (
             <BsGridFill size={20} />
           ) : (
-            <BsGrid onClick={() => setSelectedNav('/')} size={20} />
+            <BsGrid onClick={() => setSelectedNav('/home')} size={20} />
           )}
         </Link>
         <p>Home</p>

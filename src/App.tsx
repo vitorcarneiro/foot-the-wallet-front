@@ -1,21 +1,18 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { SelectedThemeProvider } from './contexts/SelectedThemeContext';
-import Layout from './components/PageLayout';
+import Layout from './layouts/Page';
+import Providers from './Providers';
 
 export function App() {
   return (
     <Routes>
-      <Route
-        element={
-          <SelectedThemeProvider>
-            <Layout />
-          </SelectedThemeProvider>
-        }
-      >
-        <Route path="/" element={<div>Hello World</div>} />
+      <Route path="/" element={<div>Login</div>} />
+      <Route path="/signup" element={<div>SignUp</div>} />
+      <Route element={<Layout />}>
+        <Route path="/home" element={<div>Hello World</div>} />
         <Route path="/test" element={<div>Test in progress</div>} />
-        <Route path="*" element={<div>Test</div>} />
+        <Route path="*" element={<div>This page does not exist yet</div>} />
       </Route>
     </Routes>
   );
@@ -23,8 +20,12 @@ export function App() {
 
 export function WrappedApp() {
   return (
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <SelectedThemeProvider>
+      <BrowserRouter>
+        <Providers>
+          <App />
+        </Providers>
+      </BrowserRouter>
+    </SelectedThemeProvider>
   );
 }
