@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { BsGrid, BsGridFill } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
 import NavBarContext from '../../../contexts/NavBarContext';
-import { NavButton } from './style';
+import NavButton from './style';
 
 function Home() {
   const { selectedNav, setSelectedNav } = useContext(NavBarContext);

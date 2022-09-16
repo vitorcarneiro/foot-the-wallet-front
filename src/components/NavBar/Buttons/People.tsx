@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { BsPeople, BsPeopleFill } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
 import NavBarContext from '../../../contexts/NavBarContext';
-import { NavButton } from './style';
+import NavButton from './style';
 
 function People() {
   const { selectedNav, setSelectedNav } = useContext(NavBarContext);

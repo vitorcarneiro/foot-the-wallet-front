@@ -11,8 +11,8 @@ import Charts from './Buttons/Charts';
 import People from './Buttons/People';
 import Settings from './Buttons/Settings';
 import Exit from './Buttons/Exit';
-import ThemeSwitch from './Buttons/ThemeSwitch';
 import SelectedThemeContext from '../../contexts/SelectedThemeContext';
+import ThemeSwitch from '../ThemeSwitch';
 
 function NavBar() {
   const { showNavBar } = useContext(NavBarContext);

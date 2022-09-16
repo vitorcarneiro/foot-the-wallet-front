@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { IoBarChart, IoBarChartOutline } from 'react-icons/io5';
 import { Link } from 'react-router-dom';
 import NavBarContext from '../../../contexts/NavBarContext';
-import { NavButton } from './style';
+import NavButton from './style';
 
 function Charts() {
   const { selectedNav, setSelectedNav } = useContext(NavBarContext);

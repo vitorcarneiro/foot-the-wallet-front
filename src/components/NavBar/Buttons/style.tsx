@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const NavButton = styled.button<{ isSelected: boolean }>`
+const NavButton = styled.button<{ isSelected: boolean }>`
   all: unset;
 
   display: flex;
@@ -33,13 +33,4 @@ export const NavButton = styled.button<{ isSelected: boolean }>`
   }
 `;
 
-export const SwitchContainer = styled.li`
-  position: absolute;
-  bottom: 30px;
-  transform: rotate(90deg);
-
-  svg {
-    transform: rotate(-90deg);
-    color: ${({ theme }) => theme.colors.background1};
-  }
-`;
+export default NavButton;

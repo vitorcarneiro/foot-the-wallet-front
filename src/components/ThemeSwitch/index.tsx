@@ -5,8 +5,8 @@ import { BsFillMoonFill } from 'react-icons/bs';
 import { RiSunFill } from 'react-icons/ri';
 import { shade, lighten } from 'polished';
 
-import { SwitchContainer } from './style';
-import SelectedThemeContext from '../../../contexts/SelectedThemeContext';
+import SelectedThemeContext from '../../contexts/SelectedThemeContext';
+import SwitchContainer from './style';
 
 function ThemeSwitch() {
   const { isDarkMode, setIsDarkMode } = useContext(SelectedThemeContext);

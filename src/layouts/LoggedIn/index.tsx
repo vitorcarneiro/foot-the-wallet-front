@@ -5,7 +5,7 @@ import { ContentContainer, PageContainer } from './style';
 import NavBar from '../../components/NavBar';
 import ShowHideNavBarButton from '../../components/NavBar/ShowHideButton';
 
-function Layout() {
+function LoggedInLayout() {
   return (
     <PageContainer>
       <NavBar />
@@ -17,4 +17,4 @@ function Layout() {
   );
 }
 
-export default Layout;
+export default LoggedInLayout;

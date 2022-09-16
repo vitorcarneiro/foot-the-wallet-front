@@ -1,6 +1,6 @@
 import React from 'react';
 import { TbDoorExit } from 'react-icons/tb';
-import { NavButton } from './style';
+import NavButton from './style';
 
 function Exit() {
   return (
