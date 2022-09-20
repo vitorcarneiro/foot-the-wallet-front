@@ -3,13 +3,14 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { SelectedThemeProvider } from './contexts/SelectedThemeContext';
 import LoggedInLayout from './layouts/LoggedIn';
 import NotLoggedLayout from './layouts/NotLogged';
+import Login from './pages/Login';
 import Providers from './Providers';
 
 export function App() {
   return (
     <Routes>
       <Route element={<NotLoggedLayout />}>
-        <Route path="/" element={<div>Login</div>} />
+        <Route path="/" element={<Login />} />
         <Route path="/signup" element={<div>SignUp</div>} />
       </Route>
 

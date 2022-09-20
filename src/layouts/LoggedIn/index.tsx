@@ -1,7 +1,8 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
 
-import { ContentContainer, PageContainer } from './style';
+import PageContainer from '../../components/PageContainer';
+import ContentContainer from './style';
 import NavBar from '../../components/NavBar';
 import ShowHideNavBarButton from '../../components/NavBar/ShowHideButton';
 

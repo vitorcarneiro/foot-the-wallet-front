@@ -1,12 +1,30 @@
 import React from 'react';
-import { Outlet } from 'react-router-dom';
+import Card from '../../components/Card';
+// import { Outlet } from 'react-router-dom';
 
-import { PageContainer } from '../LoggedIn/style';
+import HeaderLogo from '../../components/HeaderLogo';
+import LoginSignupBox from '../../components/LoginSignupBox';
+import PageContainer from '../../components/PageContainer';
+import {
+  LoginContainer,
+  Container,
+  BiggerCircle,
+  SmallerCircle,
+} from '../../pages/Login/style';
 
 function NotLoggedLayout() {
   return (
     <PageContainer>
-      <Outlet />
+      <LoginContainer>
+        <HeaderLogo />
+        <Container>
+          <BiggerCircle />
+          <Card />
+          {/* <Outlet /> */}
+          <LoginSignupBox />
+          <SmallerCircle />
+        </Container>
+      </LoginContainer>
     </PageContainer>
   );
 }
