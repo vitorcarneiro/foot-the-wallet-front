@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const LoginSignupBoxContainer = styled.div`
   width: 400px;
-  height: 252px;
+  height: 450px;
 
   position: absolute;
   top: 20px;
@@ -13,16 +13,19 @@ export const LoginSignupBoxContainer = styled.div`
 
 export const Border = styled.div`
   width: 400px;
-  height: 400px;
+  height: 450px;
+  display: flex;
+  flex-direction: column;
 
   position: absolute;
+  z-index: 2;
 
   border-radius: 30px;
-  border: 2px solid transparent;
+  border: 5px solid transparent;
   background: linear-gradient(
       45deg,
-      ${({ theme }) => theme.colors.fourth},
-      ${({ theme }) => theme.colors.third}
+      ${({ theme }) => theme.colors.first},
+      ${({ theme }) => theme.colors.second}
     )
     border-box;
   -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
@@ -35,82 +38,218 @@ export const Border = styled.div`
     width: 100%;
     height: 100%;
   }
-
-  z-index: 2;
 `;
 
 export const BoxBackground = styled.div`
   width: 400px;
-  height: 400px;
-  padding: 20px;
+  height: 450px;
+  padding: 30px;
 
   position: absolute;
+  z-index: 2;
 
   border-radius: 30px;
-  background-color: ${({ theme }) => theme.colors.text}30;
+  background-color: ${({ theme }) => theme.colors.text}20;
+  backdrop-filter: blur(5px);
 
-  h1 {
-    color: ${({ theme }) => theme.colors.text};
-    font-weight: 700;
-    font-size: 23px;
-    font-family: 'Roboto', sans-serif;
+  h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: #fff;
+    text-align: center;
   }
 
-  p {
-    position: absolute;
-    bottom: 30px;
-    left: 30px;
+  form {
+    a {
+      position: relative;
 
-    font-family: 'Roboto', sans-serif;
-    color: #fff;
-    text-shadow: 1px 1px 2px #00000050;
-
-    :last-child {
-      bottom: 60px;
-      font-weight: 500;
+      display: inline-block;
+      padding: 10px 20px;
+      color: #03e9f4;
+      font-size: 16px;
+      text-decoration: none;
+      text-transform: uppercase;
+      overflow: hidden;
+      transition: 0.5s;
+      margin-top: 40px;
       letter-spacing: 4px;
+
+      :hover {
+        background: #03e9f4;
+        color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 5px ${({ theme }) => theme.colors.first},
+          0 0 25px ${({ theme }) => theme.colors.first},
+          0 0 50px ${({ theme }) => theme.colors.first},
+          0 0 100px ${({ theme }) => theme.colors.first};
+      }
     }
+
+    span {
+      position: absolute;
+      display: block;
+
+      :nth-child(1) {
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          ${({ theme }) => theme.colors.first}
+        );
+        animation: btn-anim1 1s linear infinite;
+      }
+
+      :nth-child(2) {
+        top: -100%;
+        right: 0;
+        width: 2px;
+        height: 100%;
+        background: linear-gradient(
+          180deg,
+          transparent,
+          ${({ theme }) => theme.colors.first}
+        );
+        animation: btn-anim2 1s linear infinite;
+        animation-delay: 0.25s;
+      }
+
+      :nth-child(3) {
+        bottom: 0;
+        right: -100%;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(
+          270deg,
+          transparent,
+          ${({ theme }) => theme.colors.first}
+        );
+        animation: btn-anim3 1s linear infinite;
+        animation-delay: 0.5s;
+      }
+
+      :nth-child(4) {
+        bottom: -100%;
+        left: 0;
+        width: 2px;
+        height: 100%;
+        background: linear-gradient(
+          360deg,
+          transparent,
+          ${({ theme }) => theme.colors.first}
+        );
+        animation: btn-anim4 1s linear infinite;
+        animation-delay: 0.75s;
+      }
+    }
+
+    @keyframes btn-anim1 {
+      0% {
+        left: -100%;
+      }
+      50%,
+      100% {
+        left: 100%;
+      }
+    }
+
+    @keyframes btn-anim2 {
+      0% {
+        top: -100%;
+      }
+      50%,
+      100% {
+        top: 100%;
+      }
+    }
+
+    @keyframes btn-anim3 {
+      0% {
+        right: -100%;
+      }
+      50%,
+      100% {
+        right: 100%;
+      }
+    }
+
+    @keyframes btn-anim4 {
+      0% {
+        bottom: -100%;
+      }
+      50%,
+      100% {
+        bottom: 100%;
+      }
+    }
+  }
+
+  h3 {
+    text-align: center;
+    color: ${({ theme }) => theme.colors.items};
   }
 `;
 
-export const LoginSignupForm = styled.form`
-  margin-top: 24px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 10px;
+export const UserBox = styled.div`
+  position: relative;
 
   input {
-    width: 303px;
-    height: 45px;
-    background: #ffffff;
-    border: 1px solid #ffffff;
-    box-sizing: border-box;
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+  }
+
+  label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: 0.5s;
+  }
+
+  input:focus ~ label,
+  input:valid ~ label {
+    top: -20px;
+    left: 0;
+    color: #03e9f4;
+    font-size: 12px;
+  }
+`;
+
+export const SocialMediaContainer = styled.div`
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+
+  button {
+    width: 60px;
+    height: 60px;
     border-radius: 5px;
-    padding: 11px;
-    font-size: 20px;
-    line-height: 25px;
-    color: black;
-    ::-webkit-input-placeholder {
-      color: #d5d5d5;
-    }
-    :-moz-placeholder {
-      color: #d5d5d5;
-      opacity: 1;
-    }
-    ::-moz-placeholder {
-      color: #d5d5d5;
-      opacity: 1;
-    }
-    :-ms-input-placeholder {
-      color: #d5d5d5;
-    }
-    ::-ms-input-placeholder {
-      color: #d5d5d5;
-    }
-    ::placeholder {
-      color: #d5d5d5;
+    border: 1px solid #a5a4a4;
+    background-color: #ffffff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    svg {
+      width: 35px;
+      height: 35px;
     }
   }
 `;
