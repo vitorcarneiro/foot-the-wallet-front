@@ -7,10 +7,10 @@ export const CardContainer = styled.div`
   height: 252px;
 
   position: relative;
-  top: 12vh;
-  left: 3vw;
 
   transform: rotate(-15deg);
+  align-self: flex-end;
+  margin-bottom: 5vh;
 `;
 
 export const Border = styled.div`

@@ -3,28 +3,30 @@ import Card from '../../components/Card';
 // import { Outlet } from 'react-router-dom';
 
 import HeaderLogo from '../../components/HeaderLogo';
-import LoginSignupBox from '../../components/LoginSignupBox';
+import LoginBox from '../../components/LoginBox';
 import PageContainer from '../../components/PageContainer';
 import {
-  LoginContainer,
-  Container,
   BiggerCircle,
+  Container,
+  LoginSignupContainer,
+  Slogan,
   SmallerCircle,
-} from '../../pages/Login/style';
+} from './style';
 
 function NotLoggedLayout() {
   return (
     <PageContainer>
-      <LoginContainer>
+      <LoginSignupContainer>
         <HeaderLogo />
         <Container>
           <BiggerCircle />
           <Card />
+          <Slogan>MAKE YOUR FINANCES WORK</Slogan>
           {/* <Outlet /> */}
-          <LoginSignupBox />
+          <LoginBox />
           <SmallerCircle />
         </Container>
-      </LoginContainer>
+      </LoginSignupContainer>
     </PageContainer>
   );
 }

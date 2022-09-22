@@ -9,7 +9,7 @@ import {
   SocialMediaContainer,
 } from './style';
 
-function LoginSignupBox() {
+function LoginBox() {
   return (
     <LoginSignupBoxContainer>
       <Border />
@@ -32,7 +32,7 @@ function LoginSignupBox() {
             Submit
           </a>
         </form>
-        <h3> - - - - - OU - - - - - </h3>
+        <h3>- - - - - - OU - - - - - -</h3>
         <SocialMediaContainer>
           <button type="submit">
             <FcGoogle />
@@ -52,4 +52,4 @@ function LoginSignupBox() {
   );
 }
 
-export default LoginSignupBox;
+export default LoginBox;

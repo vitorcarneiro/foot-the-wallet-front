@@ -4,9 +4,7 @@ export const LoginSignupBoxContainer = styled.div`
   width: 400px;
   height: 450px;
 
-  position: absolute;
-  top: 20px;
-  right: 20px;
+  position: relative;
   align-self: flex-start;
   justify-self: right;
 `;
@@ -65,7 +63,7 @@ export const BoxBackground = styled.div`
 
       display: inline-block;
       padding: 10px 20px;
-      color: #03e9f4;
+      color: ${({ theme }) => theme.colors.text};
       font-size: 16px;
       text-decoration: none;
       text-transform: uppercase;
@@ -97,7 +95,7 @@ export const BoxBackground = styled.div`
         background: linear-gradient(
           90deg,
           transparent,
-          ${({ theme }) => theme.colors.first}
+          ${({ theme }) => theme.colors.text}
         );
         animation: btn-anim1 1s linear infinite;
       }
@@ -110,7 +108,7 @@ export const BoxBackground = styled.div`
         background: linear-gradient(
           180deg,
           transparent,
-          ${({ theme }) => theme.colors.first}
+          ${({ theme }) => theme.colors.text}
         );
         animation: btn-anim2 1s linear infinite;
         animation-delay: 0.25s;
@@ -124,7 +122,7 @@ export const BoxBackground = styled.div`
         background: linear-gradient(
           270deg,
           transparent,
-          ${({ theme }) => theme.colors.first}
+          ${({ theme }) => theme.colors.text}
         );
         animation: btn-anim3 1s linear infinite;
         animation-delay: 0.5s;
@@ -138,8 +136,9 @@ export const BoxBackground = styled.div`
         background: linear-gradient(
           360deg,
           transparent,
-          ${({ theme }) => theme.colors.first}
+          ${({ theme }) => theme.colors.text}
         );
+
         animation: btn-anim4 1s linear infinite;
         animation-delay: 0.75s;
       }
@@ -188,7 +187,8 @@ export const BoxBackground = styled.div`
 
   h3 {
     text-align: center;
-    color: ${({ theme }) => theme.colors.items};
+    color: ${({ theme }) => theme.colors.text};
+    word-spacing: 6px;
   }
 `;
 
